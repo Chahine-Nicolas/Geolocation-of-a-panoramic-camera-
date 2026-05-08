@@ -58,17 +58,41 @@ At least two videos are required:
 The first step consists of projecting the .360 files into a sequence of front/back fisheye image pairs.
 
 ```highlight
-python Gopro_2_fisheye.py -i \file_path\file.360 -o \file_path
+conda activate Main_env
+python Code/Gopro_2_fisheye.py -i \file_path\file.360 -o \file_path
 ```
 <p align="center">
-  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Frt_0000.png" width="300">
-  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Bck_0000.png" width="300">
- 
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Frt_0040.png" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Bck_0040.png" width="300">
 </p>
 
+Next, the camera orientation must be saved using the IMU calibration sequence.
+```highlight
+conda activate Main_env
+python Code/camera_orientation.py --output "..\file_path" --calib "..\file_path_calib"
+```
 
+To define the horizon line, we use the sky segmentation model presented in the paper [Castle in the Sky: Dynamic Sky Replacement and Harmonization in Videos](https://github.com/jiupinjia/SkyAR).
 
+```highlight
+conda activate torch
+python skydetect.py --image_path "..\file_path\*.png" --checkpoint_path "..\checkpoints_G_coord_resnet50\best_ckpt.pt" --output_dir "..\file_path"
+```
 
+<p align="center">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Frt_0040.png" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Bck_0040.png" width="300">
+</p>
+
+%python warping_ubu.py --gopro_dir "/mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/gopro/out/GS010190" --mesh %/mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/lidar/swisssurface3d_2019_2540-1181_2056_5728/tile.ply --image Frt_0000
+
+Next, with the camera orientation, we can pair index of both horizon lines to creates markers 
+python create_markers.py --data_path "C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010191" --calib_path "C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010189"
+
+These markers can be imported inside a Metashape project with: 
+
+python import_markers.py --project_path r"C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010190\metashape3.psx" --gopro_path r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010190'
+   
 
 
 
