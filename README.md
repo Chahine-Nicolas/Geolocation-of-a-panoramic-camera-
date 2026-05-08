@@ -95,10 +95,11 @@ python create_markers.py --data_path "..\file_path"" --calib_path "..\file_path_
 <p align="center">
   <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig1.PNG" width="300">
   <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig2.PNG" width="300">
+</p>
+<p align="center">
   <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig3.PNG" width="300">
   <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig4.PNG" width="300">
 </p>
-
 The generated markers can then be imported into a Metashape project using:
 
 ```highlight
