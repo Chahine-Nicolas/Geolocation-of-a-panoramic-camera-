@@ -60,8 +60,11 @@ The first step consists of projecting the .360 files into a sequence of front/ba
 ```highlight
 python Gopro_2_fisheye.py -i \file_path\file.360 -o \file_path
 ```
-![Alternative text](path/to/image.png)
-
+<p align="center">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Frt_0000.png" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Bck_0000.png" width="300">
+ 
+</p>
 
 
 
