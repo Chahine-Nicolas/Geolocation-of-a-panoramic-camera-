@@ -85,19 +85,29 @@ python skydetect.py --image_path "..\file_path\*.png" --checkpoint_path "..\chec
   <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/Bck_0040_mask.png" width="300">
 </p>
 
-# python warping_ubu.py --gopro_dir "/mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/gopro/out/GS010190" --mesh mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/lidar/swisssurface3d_2019_2540-1181_2056_5728/tile.ply --image Frt_0000
-
 Next, using the estimated camera orientation, the corresponding horizon line indices can be paired to create markers.
 
 ```highlight
 python create_markers.py --data_path "..\file_path"" --calib_path "..\file_path_calib"
 ```
 
+### Example:
+<p align="center">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig1.PNG" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig2.PNG" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig3.PNG" width="300">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/warping/fig4.PNG" width="300">
+</p>
+
 The generated markers can then be imported into a Metashape project using:
 
 ```highlight
 python import_markers.py --project_path "..\metashape.psx" --gopro_path "..\file_path"
-```   
+```
+### Example:
+<p align="center">
+  <img src="https://github.com/Chahine-Nicolas/Geolocation-of-a-panoramic-camera-/blob/main/_assets/gcp.PNG" width="300">
+</p>
 
 
 
