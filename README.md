@@ -47,7 +47,20 @@ conda install matplotlib opencv -c conda-forge
 conda install scikit-image open3d -c conda-forge
 ```
 
+## Protocol
 
+This project uses a GoPro Max 360 camera for geolocation experiments.
+At least two videos are required:
+
+- One video for IMU calibration, in which the camera undergoes rotations around all axes;
+- A second video recorded around the area to geolocate.
+
+The first step consists of projecting the .360 files into a sequence of front/back fisheye image pairs.
+
+```highlight
+python Gopro_2_fisheye.py -i \file_path\file.360 -o \file_path
+```
+![Alternative text](path/to/image.png)
 
 
 
