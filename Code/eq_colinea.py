@@ -72,34 +72,6 @@ def unproject(ihoriz, jhoriz, dhoriz, F, S, R_temp, w=2720, h=2720):
     M = dhoriz/norm(F) * R_temp@(m-F) + S
     return M[0], M[1], M[2]
 
-# obs_valeur = [
-#     {"X": 2540516.75, "Y":1181183.00, "Z":468.91, "x":1977, "y":731},
-#     {"X": 2540511.50, "Y":1181189.25, "Z":468.88, "x":1742, "y":686},
-#     {"X": 2540513.25, "Y":1181200.50, "Z": 468.88, "x":1470, "y":786},
-#     {"X": 2540515.50, "Y":1181212.00, "Z": 468.91, "x": 1259, "y":877},
-#     {"X": 2540513.50, "Y":1181222.63, "Z": 468.83, "x":1105, "y":952},
-#     {"X": 2540518.50, "Y":1181234.25, "Z":466.03, "x":991, "y":1066},
-    
-#     {"X": 254092.50, "Y": 1181213.63, "Z":454.42, "x":2156, "y":1171},
-#     {"X": 2540518.50,"Y": 1181180.13, "Z": 454.42, "x":678, "y":1228},
-#     {"X": 2540487.75, "Y":1181201.25, "Z":448.72, "x":715, "y":1442},
-#     {"X": 2540495.75, "Y":1181171.38, "Z":454.39, "x":2459, "y":945}]
-
-# F = np.array([0,-1360,0])
-# import sys
-# sys.path.append( r'C:\Users\chahi\Desktop\INSA\G5\PFE\prog')
-# import reframe as ref
-# import eq_colinea as col
-# import lecture as lec
-# lien = r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010194'
-
-# [xmn95, ymn95, zmn95], index = lec.lecture_coord_cam("Frt_0140.png", r"C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010194\pos.txt")
-# xcam, ycam, zcam = ref.reframe(xmn95, ymn95, zmn95) 
-# S = np.array([xcam, ycam, zmn95])
-# R_camera = lec.lecture_matrix_cam("Frt_0140.png", lien+'\mat_rot.txt')
-# col.unproject(1947, 731, 35, F, S, R_camera, w=2720, h=2720)
-
-
 def readOPKFile(filename):
     # Exported from Agisoft format OPK
     # Cameras (105)

@@ -256,5 +256,3 @@ if __name__ == "__main__":
         image_prefix="Frt",
         fov=90
     )
-    
-# python create_markers.py --data_path r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010191' --calib_path r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010189'  

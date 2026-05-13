@@ -15,7 +15,6 @@ def load_model(checkpoint_path, device="cpu"):
     device = torch.device(device)
 
     model = define_G(input_nc=3, output_nc=1, ngf=64, netG="coord_resnet50")
-    #checkpoint = torch.load(checkpoint_path, map_location=device)
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     model.load_state_dict(checkpoint['model_G_state_dict'])
     model.to(device)
@@ -98,8 +97,6 @@ def sky_detect(
 
     os.makedirs(output_dir, exist_ok=True) if output_dir else None
 
-    print("glob.glob(image_pattern) ", glob.glob(image_pattern))
-    import pdb; pdb.set_trace()
     for img_path in glob.glob(image_pattern):
         start = time.time()
 
@@ -141,12 +138,3 @@ if __name__ == "__main__":
         output_dir = args.output_dir,
         device="cuda" if torch.cuda.is_available() else "cpu"
     )
-
-# python skydetect2.py --image_path "C:\Users\chahi\Desktop\HEIG\Recherche\panoramique\pfe\data\tel\*.jpg" --checkpoint_path "C:\Users\chahi\Desktop\INSA\G5\PFE\3_appariement\checkpoints_G_coord_resnet50\best_ckpt.pt" --output_dir "C:\Users\chahi\Desktop\HEIG\Recherche\panoramique\pfe\data\tel\"
-
-    # sky_detect(
-    #     image_pattern=r"C:\Users\chahi\Desktop\HEIG\Recherche\panoramique\pfe\data\tel/*.jpg",
-    #     checkpoint_path = r"C:\Users\chahi\Desktop\INSA\G5\PFE\3_appariement\checkpoints_G_coord_resnet50\best_ckpt.pt",
-    #     output_dir=r"C:\Users\chahi\Desktop\HEIG\Recherche\panoramique\pfe\data\tel/",
-    #     device="cuda" if torch.cuda.is_available() else "cpu"
-    # )

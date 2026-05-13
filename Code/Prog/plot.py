@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.spatial.transform import Rotation as Rota
 from numpy.linalg import norm 
-import sys
-sys.path.append( r'C:\Users\chahi\Desktop\INSA\G5\PFE\prog')
+
 import convert_angle as cv
 import lecture as lec
 
@@ -30,8 +29,7 @@ def plot_angle(euler, num):
     plt.savefig("Evolution des angles au cours d'une vidéo "+str(num))
     return 
 
-def plot_trajectoire(num = 88):
-    link = r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS01'+f"{num:04d}"+'\GPS.txt'
+def plot_trajectoire(link, num = 88):
     Coord = lec.lecture_coord(link)
     if Coord != []:
         print(True)

@@ -14,25 +14,6 @@ import lecture as lec
 
 import argparse
 
-# --------------import argparse----------------------------------------------------
-# CONFIGURATION
-# ------------------------------------------------------------------
-
-# BASE_DIR = "/mnt/c/Users/chahi/Desktop/INSA/G5/PFE"
-
-# DATA_DIR = BASE_DIR + "/donnees"
-
-# LIDAR_DIR = DATA_DIR + "/lidar/swisssurface3d_2019_2540-1181_2056_5728"
-
-# GOPRO_DIR = DATA_DIR + "/gopro/out/GS010190"
-
-# MESH_PATH = LIDAR_DIR + "/tile.ply"
-
-# DEPTH_IMAGE = GOPRO_DIR + "/Frt_0240_mask.png"
-
-# ROTATION_FILE = GOPRO_DIR + "/mat_rot.txt"
-
-# POSITION_FILE = GOPRO_DIR + "/pos.txt"
 
 WIDTH = 2720
 HEIGHT = 2720
@@ -442,5 +423,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-    
-# python warping_ubu.py --gopro_dir "/mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/gopro/out/GS010190" --mesh /mnt/c/Users/chahi/Desktop/INSA/G5/PFE/donnees/lidar/swisssurface3d_2019_2540-1181_2056_5728/tile.ply --image Frt_0000
