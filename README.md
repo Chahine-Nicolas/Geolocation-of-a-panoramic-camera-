@@ -88,6 +88,7 @@ python skydetect.py --image_path "..\file_path\*.png" --checkpoint_path "..\chec
 Next, using the estimated camera orientation, the corresponding horizon line indices can be paired to create markers.
 
 ```highlight
+conda activate Main_env
 python create_markers.py --data_path "..\file_path"" --calib_path "..\file_path_calib"
 ```
 
@@ -103,6 +104,7 @@ python create_markers.py --data_path "..\file_path"" --calib_path "..\file_path_
 The generated markers can then be imported into a Metashape project using:
 
 ```highlight
+conda activate Main_env
 python import_markers.py --project_path "..\metashape.psx" --gopro_path "..\file_path"
 ```
 ### Example:
