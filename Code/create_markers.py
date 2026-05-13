@@ -120,6 +120,7 @@ def process_image(
         data_path,
         heading,
         intrins,
+        dtm_path,
         fov=90
 ):
     """
@@ -154,7 +155,8 @@ def process_image(
         S,
         R_agisoft,
         intrins,
-        current_heading
+        current_heading,
+        dtm_path
     )
 
     return obs
@@ -192,6 +194,7 @@ def save_observations(observations, output_file):
 def run_pipeline(
         data_path,
         calib_path,
+        dtm_path,
         image_prefix="Frt",
         fov=90,
         output_name="mrkrtot.txt"
@@ -226,6 +229,7 @@ def run_pipeline(
             data_path,
             heading,
             intrins,
+            dtm_path,
             fov=fov
         )
 
@@ -247,12 +251,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Paths")
     parser.add_argument("--data_path", type=str,  default="data/", required=True, help="Gopro sequence path")
     parser.add_argument("--calib_path", type=str, default="data/", required=True, help="Gopro sequence calibration path")
+    parser.add_argument("--dtm_path", type=str, default="data/raster.tif", required=True, help="raster.tif path")
+
+
+
 
     args = parser.parse_args()
     
     run_pipeline(
         data_path=args.data_path,
         calib_path=args.calib_path,
+        dtm_path=args.dtm_path,
         image_prefix="Frt",
         fov=90
     )

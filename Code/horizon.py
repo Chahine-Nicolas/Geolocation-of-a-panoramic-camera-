@@ -1,44 +1,20 @@
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import open3d.visualization.rendering as rendering
-import open3d as o3d
+# import open3d as o3d
 from scipy import ndimage
-from numpy.linalg import norm 
-from scipy.spatial.transform import Rotation as Rota
-from dtw import *
-import cv2
-import math
+# from numpy.linalg import norm 
+# from scipy.spatial.transform import Rotation as Rota
+# from dtw import *
+# import cv2
+# import math
 
-import reframe as ref
-import eq_colinea as col
-import lecture as lec
+# import reframe as ref
+# import eq_colinea as col
+# import lecture as lec
 
-import tempfile
-import os
-###############################################################################
-###############################################################################
-#Données
-
-# [xmn95, ymn95, zmn95], index = lec.lecture_coord_cam("Frt_0240.png", r"C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010190\pos.txt")
-# xcam, ycam, zcam = ref.reframe(xmn95, ymn95, zmn95) 
-# mesh = o3d.io.read_triangle_mesh(r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\Lidar\swisssurface3d_2019_2540-1181_2056_5728/tile.ply')
-# lien = r'C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\gopro\out\GS010190'
-# #lien = r'C:\Users\chahi\Desktop\INSA\G5\PFE\testgopro\GS010194'
-
-# R_camera = lec.lecture_matrix_cam("Frt_0070.png", lien+'\mat_rot.txt')
-# R_agisoft = R_camera @ np.array([[1,0,0],
-#                                   [0,0,1],
-#                                   [0,-1,0]])
-# r = Rota.from_matrix(R_agisoft).as_euler('xyz', degrees=True)
-
-# up = np.array([R_agisoft[0][2],R_agisoft[1][2], R_agisoft[2][2]])
-# center = np.array([R_agisoft[0][1],R_agisoft[1][1],R_agisoft[2][1]])
-# FOV = 90
-# S = np.array([xcam, ycam, zmn95])
-# M = []
-
-# depth_img = '\Frt_0070_mask.png'
-
+# import tempfile
+# import os
 
 ###############################################################################
 ###############################################################################

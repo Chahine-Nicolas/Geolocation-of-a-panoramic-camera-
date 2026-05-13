@@ -1,27 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import open3d as o3d
+# import open3d as o3d
 from scipy import ndimage
-from scipy.spatial.transform import Rotation as Rota
+# from scipy.spatial.transform import Rotation as Rota
 import cv2
 import imutils
-import reframe as ref
-import lecture as lec
+# import reframe as ref
+# import lecture as lec
 import horizon as hor
 import circular_profil as cir
 from dtw import *
 
-
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
 ###############################################################################
 
-dtm_path = r"C:\Users\chahi\Desktop\INSA\G5\PFE\donnees\raster.tif"
-
-
-def warping(lien, depth_img, FOV, S, R_temp, intrins, heading):
+def warping(lien, depth_img, FOV, S, R_temp, intrins, heading, dtm_path):
     #ji image
     
     up = np.array([R_temp[0][2], R_temp[1][2], R_temp[2][2]])
